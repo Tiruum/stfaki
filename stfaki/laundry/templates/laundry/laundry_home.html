@@ -1,0 +1,57 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+Стиральная комната
+{% endblock %}
+
+{% block content %}
+<h1>Стиральная комната</h1>
+
+{% if signup %}
+<div class="row">
+{% for el in signup %}
+
+        <div class="alert alert-success col-md-3 m-1">
+            <div>Фамилия: {{ el.user }}</div>
+            <div>Дата и время: {{ el.datetime }}</div>
+            <div>Стиралки:
+            {% if el.wm1 %}1{% endif %}
+            {% if el.wm2 %}2{% endif %}
+            {% if el.wm3 %}3{% endif %}
+            {% if el.wm4 %}4{% endif %}
+            {% if el.wm5 %}5{% endif %}
+            {% if el.wm6 %}6{% endif %}
+            </div>
+        </div>
+
+{% endfor %}
+</div>
+
+<div class="row">
+    <div class="col-md-1"></div><div class="col-md-1"></div><div class="col-md-1">00:00 - 02:00</div><div class="col-md-1">02:40 - 04:40</div><div class="col-md-1">05:20 - 07:20</div><div class="col-md-1">08:00 - 10:00</div><div class="col-md-1">10:40 - 12:40</div><div class="col-md-1">13:20 - 15:20</div><div class="col-md-1">16:00 - 18:00</div><div class="col-md-1">18:40 - 20:40</div><div class="col-md-1">21:20 - 23:20</div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div><div class="col-md-1">1</div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div><div class="col-md-1">2</div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div><div class="col-md-1">3</div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div><div class="col-md-1">4</div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div><div class="col-md-1">5</div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div><div class="col-md-1">6</div>
+</div>
+
+{% else %}
+<p class="alert alert-danger">Записей не найдено</p>
+{% endif %}
+
+{% endblock %}

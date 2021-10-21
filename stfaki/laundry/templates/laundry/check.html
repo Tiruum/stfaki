@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+Стиральная комната
+{% endblock %}
+
+{% block content %}
+<form method="post" class="form-group">
+    {% csrf_token %}
+    <span></span>{{ error }}
+    <input type="text" class="form-control" name="user" placeholder="Иванов"><br>
+    <input type="datetime-local" class="form-control" name="datetime"><br>
+    <input type="checkbox" class="form-check-label" name="wm1">
+    <input type="checkbox" class="form-check-label" name="wm2">
+    <input type="checkbox" class="form-check-label" name="wm3">
+    <input type="checkbox" class="form-check-label" name="wm4">
+    <input type="checkbox" class="form-check-label" name="wm5">
+    <input type="checkbox" class="form-check-label" name="wm6"><br>
+    <button type="submit" class="btn btn-success">Записаться</button>
+</form>
+{% endblock %}
