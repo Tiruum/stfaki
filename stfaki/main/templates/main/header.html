@@ -1,0 +1,42 @@
+<!-- <div class="container-fluid" id="header">
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-5">
+            <a href="{% url 'home' %}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" style="font-weight: 700;" id="logo">
+                ФАКТ
+            </a>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">Главная</a></li>
+                <li><a href="{% url 'dorm' %}" class="nav-link px-2 link-dark">Общежитие</a></li>
+                <li><a href="{% url 'education' %}" class="nav-link px-2 link-dark">Учеба</a></li>
+                <li><a href="{% url 'activism' %}" class="nav-link px-2 link-dark">Активизм</a></li>
+                <li><a href="{% url 'wiki' %}" class="nav-link px-2 link-dark">Вики</a></li>
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-primary py-2 px-3" style="background-color: #0261A3; font-weight: 600; font-size: 12px;">Войти</button>
+            </div>
+        </header>
+    </div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-5" id="header">
+    <div class="container" style="max-width: 80%;">
+    <a href="{% url 'home' %}" class="navbar-brand" style="font-weight: 700;" id="logo">ФАКТ</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex align-items-center justify-content-center" id="navbar">
+        <ul class="nav navbar-nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 {% if request.path == '/' %} active {% endif %}">Главная </a></li>
+            <li class="nav-item"><a href="{% url 'dorm' %}" class="nav-link px-2 {% if request.path == '/dorm' %} active {% endif %}">Общежитие</a></li>
+            <li class="nav-item"><a href="{% url 'education' %}" class="nav-link px-2 {% if request.path == '/education' %} active {% endif %}">Учеба</a></li>
+            <li class="nav-item"><a href="{% url 'activism' %}" class="nav-link px-2 {% if request.path == '/activism' %} active {% endif %}">Активизм</a></li>
+            <li class="nav-item"><a href="{% url 'wiki' %}" class="nav-link px-2 {% if request.path == '/wiki' %} active {% endif %}">Вики</a></li>
+        </ul>
+    </div>
+    <div class="d-flex align-items-center">
+        <button type="button" class="btn btn-primary py-2 px-3"
+            style="background-color: #0261A3; font-weight: 600; font-size: 12px;">Войти</button>
+    </div>
+</nav>
